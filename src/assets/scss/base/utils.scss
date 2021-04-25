@@ -1,0 +1,106 @@
+// padding and margin utility classes e.g .p-* && .m-*
+@for $i from 0 through 10 {
+	.p {
+		&-#{$i} {
+			padding: #{$i}rem !important;
+		}
+		&y-#{$i} {
+			padding-top: #{$i}rem !important;
+			padding-bottom: #{$i}rem !important;
+		}
+		&x-#{$i} {
+			padding-left: #{$i}rem !important;
+			padding-right: #{$i}rem !important;
+		}
+		&t-#{$i} {
+			padding-top: #{$i}rem !important;
+		}
+		&b-#{$i} {
+			padding-bottom: #{$i}rem !important;
+		}
+		&l-#{$i} {
+			padding-left: #{$i}rem !important;
+		}
+		&r-#{$i} {
+			padding-right: #{$i}rem !important;
+		}
+	}
+	.m {
+		&-#{$i} {
+			margin: #{$i}rem !important;
+		}
+		&y-#{$i} {
+			margin-top: #{$i}rem !important;
+			margin-bottom: #{$i}rem !important;
+		}
+		&x-#{$i} {
+			margin-left: #{$i}rem !important;
+			margin-right: #{$i}rem !important;
+		}
+		&t-#{$i} {
+			margin-top: #{$i}rem !important;
+		}
+		&b-#{$i} {
+			margin-bottom: #{$i}rem !important;
+		}
+		&l-#{$i} {
+			margin-left: #{$i}rem !important;
+		}
+		&r-#{$i} {
+			margin-right: #{$i}rem !important;
+		}
+	}
+}
+
+.u {
+	&-relative {
+		position: relative;
+	}
+	&-absolute {
+		position: absolute;
+	}
+}
+
+.auto {
+	&-mt {
+		margin-top: auto;
+	}
+	&-mb {
+		margin-bottom: auto;
+	}
+	&-ml {
+		margin-left: auto;
+	}
+	&-mr {
+		margin-right: auto;
+	}
+}
+.underline {
+	border-bottom: 0.5px solid #eff1f3;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.p-b {
+	border-bottom: 0.5px solid #d9d9d9;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+}
+
+.text {
+	&-green {
+		color: #1ecaab;
+	}
+	&-red {
+		color: #fc7777;
+	}
+	&-grey {
+		color: #a7a7a7;
+	}
+}
+
+.show__scroll-bar {
+	overflow: auto;
+	height: 80%;
+	@include addScrollBar;
+}

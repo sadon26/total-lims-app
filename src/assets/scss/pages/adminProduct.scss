@@ -1,0 +1,268 @@
+.loading-add-product {
+  position: relative;
+  background: lighten($lightGrey, 20%);
+  padding: 7px 100px;
+  width: 290px;
+  border-radius: 4px;
+  color: #fff;
+  transition: 0.3s all ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+
+  img {
+    width: 20px;
+  }
+}
+
+div.admin__product {
+  padding: 30px 30px 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+
+  &-wrap {
+    width: 100%;
+  }
+
+  .admin__product-message {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: $blue;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: 0 4px 4px -2px rgba($blue, 0.6);
+  }
+
+  &-heading {
+    @include flex(null, center);
+    margin-bottom: 30px;
+
+    &-border {
+      width: 6px;
+      height: 20px;
+      background: $blue;
+      margin-right: 13px;
+    }
+
+    p {
+      margin: 0;
+      @include fontStyle(33px, Lato, 700, #797273);
+    }
+  }
+
+  &-section {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    grid-gap: 30px;
+    max-width: 100%;
+    align-items: flex-start;
+
+    &-description {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      grid-gap: 30px;
+      max-width: 100%;
+
+      p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        @include fontStyle(17px, Lato, 600, $blue);
+        margin-bottom: 20px;
+      }
+
+      &-right {
+        display: flex;
+        align-items: center;
+        @include fontStyle(17px, Lato, 600, $blue);
+        margin-bottom: 20px;
+
+        span {
+          margin-right: 10px;
+        }
+
+        & .number {
+          background: #fa4b64;
+          width: 29px;
+          height: 29px;
+          border-radius: 50%;
+          color: #fff;
+          @include flex(center, center);
+        }
+      }
+    }
+
+    &-left,
+    &-right {
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px -3px rgba(0, 0, 0, 0.4);
+    }
+
+    &-left {
+      position: relative;
+
+      &-input-area {
+        width: 100%;
+        height: 400px;
+        overflow: auto;
+        border-radius: 10px 10px 0 0;
+        @include addScrollBar;
+        margin-bottom: 30px;
+        background: rgb(250, 250, 250);
+        padding: 10px;
+        box-sizing: border-box;
+        box-shadow: inset 0 0px 6px 0px rgba(0, 0, 0, 0.25);
+
+        &-row {
+          @include flex(space-between, null);
+          margin-bottom: 20px;
+        }
+
+        &-row-label {
+          label {
+            display: block;
+            margin-bottom: 10px;
+            @include fontStyle(15px, Lato, 600, #797273);
+          }
+
+          input {
+            width: 300px;
+            height: 35px;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #726b6c;
+            outline: none;
+            background: transparent;
+            transition: 0.3s all ease-out;
+
+            &:focus {
+              border: 2px solid $blue;
+            }
+
+            &::placeholder {
+              color: lighten(#726b6c, 20%);
+            }
+          }
+        }
+      }
+    }
+
+    &-right {
+      & .item {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid $blue;
+        color: $blue;
+        @include flex(space-between, center);
+        transition: 0.3s all ease-out;
+
+        &:hover {
+          background: #4597d113;
+        }
+      }
+    }
+
+    .product__edit-delete {
+      display: flex;
+
+      & .edit {
+        margin-right: 10px;
+      }
+
+      & .edit,
+      & .delete {
+        background: #f5f5f5;
+        width: 18px;
+        padding: 3px 5px;
+        border-radius: 4px;
+        @include flex(center, center);
+        transition: 0.3s all ease-out;
+        border: 1px solid rgba(204, 204, 204, 0.76);
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.6);
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.loading__icon {
+  width: 70px;
+
+  img {
+    width: 100%;
+  }
+
+  &-wrap {
+    width: 100%;
+    height: calc(100vh - 82.25px);
+    @include flex(center, center);
+  }
+}
+
+.main__layout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 100%;
+  grid-gap: 30px;
+  height: 370px;
+  overflow: auto;
+  @include addScrollBar;
+  padding: 0px 10px;
+
+  & label {
+    display: block;
+    margin-bottom: 10px;
+    @include fontStyle(15px, Lato, 600, #797273);
+  }
+
+  & input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #726b6c;
+    border-radius: 4px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $blue;
+    }
+  }
+}
+
+.btn__centre {
+  position: relative;
+  background: $blue;
+  padding: 10px 100px;
+  transform: translateX(-50%);
+  left: 50%;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  outline: none;
+  transition: 0.3s all ease-out;
+
+  &:hover {
+    cursor: pointer;
+    background: darken($blue, 10%);
+  }
+}

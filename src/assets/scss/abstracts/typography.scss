@@ -1,0 +1,43 @@
+.main__layout {
+  &-title {
+    @include fontStyle(17px, Lato, 600, $blue);
+
+    &.large {
+      @include fontStyle(24px, Lato, 600, $lightGrey);
+      position: relative;
+      padding-left: 15px;
+      margin: 0;
+      margin-bottom: 1rem;
+
+      &::after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 4px;
+        left: 0;
+        width: 5px;
+        height: 14px;
+        background: $blue;
+      }
+    }
+  }
+
+  &-text {
+    font-size: 0.75rem;
+    color: $darkGrey;
+    margin: 0;
+
+    &.hover {
+      display: block;
+      padding: 10px;
+      transition: 0.3s all ease-out;
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      }
+      &:hover {
+        background: rgba(0, 0, 0, 0.023);
+      }
+    }
+  }
+}
